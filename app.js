@@ -13,6 +13,6 @@ app.get('/', (req, res, next) =>{
     // res.redirect('/main')
 })
 const port = 3000
-app.listen(port, () =>{
+app.listen(port, () => {
     console.log(`Local host ${port} is connecting!`)
 })

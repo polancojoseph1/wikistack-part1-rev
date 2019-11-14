@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const Sequelize = require('sequelize'); //do we always have to export?
 const { db } = require('./models');
+const user = require('./routes/user.js')
+const wiki = require('./routes/wiki.js')
 
 // db.authenticate().
 // then(() => {
@@ -39,7 +41,10 @@ init();
 app.get('/', (req, res, next) =>{
     res.send(layout(''))
 })
+app.use('/wiki', wiki)
+app.use('/user', user)
 const port = 3000
 app.listen(port, () => {
     console.log(`Local host ${port} is connecting!`)
 })
+
